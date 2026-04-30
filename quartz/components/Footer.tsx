@@ -18,7 +18,7 @@ export default ((opts?: Options) => {
   <a href="https://github.com/MdAshrafulIslam1998" target="_blank" rel="noopener noreferrer">
     _ashraful
   </a>{" "}
-  with ❤️ © 2024
+  with ❤️ © 2026
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
