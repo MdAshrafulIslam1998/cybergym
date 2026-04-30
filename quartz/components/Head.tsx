@@ -5,6 +5,7 @@ import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
 import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
+
 export default (() => {
   const Head: QuartzComponent = ({
     cfg,
@@ -15,6 +16,7 @@ export default (() => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
     const title =
       (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
@@ -27,19 +29,20 @@ export default (() => {
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
     const iconPath = joinSegments(baseDir, "static/icon.png")
 
-    // Url of current page
     const socialUrl =
       fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
       (e) => e.name === CustomOgImagesEmitterName,
     )
+
     const ogImageDefaultPath = `https://${cfg.baseUrl}/static/og-image.png`
 
     return (
       <head>
         <title>{title}</title>
         <meta charSet="utf-8" />
+
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,6 +53,7 @@ export default (() => {
             )}
           </>
         )}
+
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -83,13 +87,21 @@ export default (() => {
         )}
 
         <link rel="icon" href={iconPath} />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href='data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Ctext y=".9em" font-size="90"%3E🍉%3C/text%3E%3C/svg%3E'
+        />
+
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
 
         {css.map((resource) => CSSResourceToStyleElement(resource, true))}
+
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
+
         {additionalHead.map((resource) => {
           if (typeof resource === "function") {
             return resource(fileData)
