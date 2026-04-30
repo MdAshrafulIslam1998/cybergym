@@ -1,4 +1,4 @@
-# Ampara — Cybersecurity from Zero, AI-Security Beyond
+# Cybersecurity from Zero, AI-Security Beyond
 
 > A lifelong, public, owned knowledge base. My personal course on cybersecurity, written as I learn it. Sydney, Australia.
 
