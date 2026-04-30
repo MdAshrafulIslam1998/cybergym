@@ -8,7 +8,7 @@ This repository is both my **second brain** and my **portfolio**. It is structur
 
 I'm a data scientist / ML engineer pivoting into cybersecurity, with a focus on the AI-security crossover (adversarial ML, LLM red teaming, ML for threat detection, securing AI systems). I want a single place that is:
 
-- **Owned** — plain markdown files in Git, not a SaaS database I can lose access to.
+- **Owned** — plain markdown files in Git, not a SaaS database I can lose access.
 - **Searchable** — full-text search both locally (Obsidian) and publicly (Quartz site).
 - **Embeddable** — diagrams, videos, code, attack walkthroughs, lab screenshots all welcome.
 - **AI-native** — Claude can crawl the entire vault to answer questions, draft summaries, generate flashcards, or quiz me.
