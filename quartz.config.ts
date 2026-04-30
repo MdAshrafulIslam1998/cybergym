@@ -10,6 +10,7 @@ const config: QuartzConfig = {
   configuration: {
     pageTitle: "🍉_cybergym",
     pageTitleSuffix: "",
+    favicon: "🍉",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
