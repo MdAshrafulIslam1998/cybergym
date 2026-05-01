@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "mdashrafulislam1998.github.io/cybergym",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "templates", "99-Templates", "_local", ".obsidian"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",

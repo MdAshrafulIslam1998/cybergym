@@ -1,0 +1,224 @@
+{
+  "main": {
+    "id": "831514053ab72bed",
+    "type": "split",
+    "children": [
+      {
+        "id": "5dd90d94c6fe6bf7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "05a8cc2e7b6ebee7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04-Hands-On/_overview.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "_overview"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "890914403fdfe86e",
+    "type": "split",
+    "children": [
+      {
+        "id": "bd983ef9565dc40c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ffe042b8d076d3eb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3ecfc957cdc1374e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "10f538a8093a722a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "2f5448cf3e156e29",
+    "type": "split",
+    "children": [
+      {
+        "id": "d2fafb40f4efc677",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c8521a013abb8363",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "04-Hands-On/_overview.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for _overview"
+            }
+          },
+          {
+            "id": "520f2357e5fc8ac7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "04-Hands-On/_overview.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from _overview"
+            }
+          },
+          {
+            "id": "80de808a683de76b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "d603854443140613",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "3f29fefcab2d05b5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "04-Hands-On/_overview.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of _overview"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "05a8cc2e7b6ebee7",
+  "lastOpenFiles": [
+    "CyberGym/README.md",
+    "CyberGym/PUBLISHING.md",
+    "CyberGym/content/index.md",
+    "CyberGym/content/00-Course-Map.md",
+    "CyberGym/content/99-Templates/lesson-template.md",
+    "CyberGym/content/99-Templates/lab-writeup-template.md",
+    "CyberGym/content/99-Templates/cert-prep-template.md",
+    "CyberGym/content/99-Templates",
+    "CyberGym/content/07-Certifications/_overview.md",
+    "CyberGym/content/07-Certifications",
+    "CyberGym/content/06-Portfolio/_overview.md",
+    "CyberGym/content/06-Portfolio",
+    "CyberGym/content/05-Specialization-AI-Security/_overview.md",
+    "CyberGym/content/05-Specialization-AI-Security",
+    "CyberGym/content/04-Hands-On/_overview.md",
+    "CyberGym/content/04-Hands-On",
+    "CyberGym/content/03-Cybersecurity-Core/_overview.md",
+    "CyberGym/content/03-Cybersecurity-Core",
+    "CyberGym/content/02-Foundations/_overview.md",
+    "CyberGym/content/02-Foundations/Networking.md",
+    "CyberGym/content/02-Foundations/Linux.md",
+    "CyberGym/content/02-Foundations",
+    "CyberGym/content/01-Roadmap/Certification-Stack.md",
+    "CyberGym/content/01-Roadmap/Career-Roadmap-2026.md",
+    "CyberGym/content/01-Roadmap/PR-Pathway.md",
+    "CyberGym/content/01-Roadmap",
+    "CyberGym/quartz.layout.ts",
+    "CyberGym/quartz.config.ts",
+    "CyberGym/quartz/static/og-image.png",
+    "CyberGym/quartz/static/icon.png",
+    "03-Cybersecurity-Core/_overview.md",
+    "02-Foundations/Networking.md",
+    "02-Foundations/Linux.md",
+    "02-Foundations/_overview.md",
+    "01-Roadmap/Career-Roadmap-2026.md"
+  ]
+}
