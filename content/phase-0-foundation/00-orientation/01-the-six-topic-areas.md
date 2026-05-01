@@ -1,6 +1,6 @@
 ---
 title: "0.0.2 The 6 topic areas"
-description: The six lenses CyberGym uses to teach cybersecurity: machine, OS, networking, security, cloud, and AI/ML security.
+description: "The six lenses CyberGym uses to teach cybersecurity: machine, OS, networking, security, cloud, and AI/ML security."
 phase: 0
 chapter: "0.0 Orientation"
 lesson: "0.0.2"
