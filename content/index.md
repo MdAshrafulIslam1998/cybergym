@@ -66,7 +66,7 @@ The same six topic areas appear in every phase, getting deeper each time:
 ## Status
 
 - **Current phase:** 0 (Foundation)
-- **Currently writing:** Chapter 0.0 (Orientation) and Chapter 0.1 (Physical Machine)
+- **Currently writing:** Chapter 0.0 (Start Here) and Chapter 0.1 (Physical Machine)
 - **Stub-only chapters:** 0.2 through 0.7 — content arrives as the curriculum is built out
 - **Started:** 2026-04-30
 

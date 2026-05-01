@@ -1,7 +1,7 @@
 ---
 title: "0.0.1 Welcome"
 phase: 0
-chapter: "0.0 Orientation"
+chapter: "0.0 Start Here"
 lesson: "0.0.1"
 status: seedling
 tags:

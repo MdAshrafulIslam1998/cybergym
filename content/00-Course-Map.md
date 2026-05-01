@@ -26,7 +26,7 @@ graph TD
   CG --> P3[Phase 3<br/>GIAC GAIA]
   CG --> P4[Phase 4<br/>Practitioner]
 
-  P0 --> P0_0[0.0 Orientation]
+  P0 --> P0_0[0.0 Start Here]
   P0 --> P0_1[0.1 Physical Machine]
   P0 --> P0_2[0.2 Operating System]
   P0 --> P0_3[0.3 Networking]
@@ -51,7 +51,7 @@ graph TD
 
 > **Goal:** Kindergarten → masters-level practical understanding across all six topic areas. From "what is a computer" to "I can navigate AWS, read code in three languages, and explain prompt injection."
 
-### Chapter 0.0 — Orientation
+### Chapter 0.0 — Start Here
 
 > Set up your tools, learn how to read the vault, meet the six topic areas.
 
