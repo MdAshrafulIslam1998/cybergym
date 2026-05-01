@@ -1,29 +1,27 @@
-# CYBERGYM_PULL.ps1
-# Pulls latest GitHub state into BOTH the Ampara working copy and the Drive vault.
-# Use this when GitHub has been updated from another machine, OR when you want
-# to be sure both local copies are at the same commit before starting work.
+# CYBERGYM_PULL.ps1  —  EDIT PROCESS step 1
+# Pull latest from GitHub into Ampara before editing.
+# (Drive side is updated only via PUBLISH after edits are done.)
+#
+# Usage:
+#   .\CYBERGYM_PULL.ps1
 
 $AMPARA = "C:\Users\Ashraful\Documents\Claude\Projects\Ampara"
-$DRIVE  = "G:\My Drive\Third Brain\CyberGym"
 
-Write-Host "`n=== CyberGym PULL (GitHub -> Ampara + Drive) ===" -ForegroundColor Cyan
+Write-Host "`n=== EDIT PREP (GitHub -> Ampara) ===" -ForegroundColor Cyan
 
-if (Test-Path "$AMPARA\.git") {
-    Set-Location $AMPARA
-    git fetch origin v4 2>&1 | Out-Null
-    git reset --hard origin/v4 2>&1 | Out-Null
-    Write-Host "  Ampara synced to origin/v4." -ForegroundColor Green
-} else {
+if (-not (Test-Path "$AMPARA\.git")) {
     Write-Host "  Ampara is not a git repo. Run CYBERGYM_INIT.ps1 first." -ForegroundColor Red
+    exit 1
 }
 
-if (Test-Path "$DRIVE\.git") {
-    Set-Location $DRIVE
-    git fetch origin v4 2>&1 | Out-Null
-    git reset --hard origin/v4 2>&1 | Out-Null
-    Write-Host "  Drive vault synced to origin/v4." -ForegroundColor Green
+Set-Location $AMPARA
+git fetch origin v4
+git reset --hard origin/v4
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "  Ampara synced to origin/v4. Ready to edit." -ForegroundColor Green
 } else {
-    Write-Host "  Drive vault not initialised. Skipping." -ForegroundColor Yellow
+    Write-Host "  Pull failed." -ForegroundColor Red
+    exit 1
 }
 
-Write-Host "`nDone.`n" -ForegroundColor Cyan
+Write-Host ""
