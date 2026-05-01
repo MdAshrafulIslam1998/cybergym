@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, cpu, memory]
 
 > **In one line:** RAM is *slow* compared to the CPU, so chip designers put tiny ultra-fast scratchpads inside the CPU itself — registers and cache — to keep the worker fed.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Typical_Cpu_cache_organization.svg?width=900" alt="Diagram of a typical CPU cache organization." />
+  <figcaption>Cache is a speed trick made physical: keep the next likely bytes close to the CPU so the core does not wait around for RAM. Image: Wikimedia Commons, Typical Cpu cache organization.svg.</figcaption>
+</figure>
+
 ---
 
 ## A story — the chef and the pantry
@@ -64,6 +69,10 @@ If you ever wondered why CPU vendors release patches that say "performance regre
    └──────┘  └──────┘  └──────┘  └──────┘  └──────┘  └──────┘
    10 ms     0.1 ms    80 ns     10 ns     1-3 ns    0.3 ns
 ```
+
+## Reference and image credit
+
+- [Typical_Cpu_cache_organization.svg](https://commons.wikimedia.org/wiki/File:Typical_Cpu_cache_organization.svg) — Chomwitt, CC BY-SA 3.0.
 
 ## Memory peg
 

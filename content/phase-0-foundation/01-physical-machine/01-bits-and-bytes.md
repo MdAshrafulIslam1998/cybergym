@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, fundamentals]
 
 > **In one line:** computers only know two things — on and off — and *everything else* (text, photos, neural networks, your bank balance) is just a clever arrangement of those.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Transistor_switch_circuit_photo_on.jpg?width=900" alt="A simple transistor switch circuit on a breadboard." />
+  <figcaption>A bit begins as a yes/no physical state. This simple transistor switch is the baby version of the same idea inside a chip. Image: Wikimedia Commons, Transistor switch circuit photo on.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — Claude Shannon and the marriage of math and electricity
@@ -54,6 +59,10 @@ The whole field of memory-safety vulnerabilities exists because **the same bits 
 1 GB    = 1,024 MB          ≈ a feature film
 1 TB    = 1,024 GB          ≈ a small NVMe drive
 ```
+
+## Reference and image credit
+
+- [Transistor_switch_circuit_photo_on.jpg](https://commons.wikimedia.org/wiki/File:Transistor_switch_circuit_photo_on.jpg) — Filip Dominec, GFDL / CC BY-SA 3.0.
 
 ## Memory peg
 

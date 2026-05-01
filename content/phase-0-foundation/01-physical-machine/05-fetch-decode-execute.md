@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, cpu]
 
 > **In one line:** the CPU's life is a four-step loop — fetch, decode, execute, store — and once you see it, every line of code in every language collapses into the same picture.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Von_Neumann_architecture.svg?width=900" alt="Von Neumann architecture diagram showing CPU, memory, input, and output." />
+  <figcaption>The stored-program idea is the quiet revolution: instructions and data both live in memory, and the CPU fetches what the program counter points at. Image: Wikimedia Commons, Von Neumann architecture.svg.</figcaption>
+</figure>
+
 ---
 
 ## A story — von Neumann's napkin
@@ -71,6 +76,10 @@ Everything the CPU does, it does because the program counter pointed there. **Wh
             │
             └────► back to fetch
 ```
+
+## Reference and image credit
+
+- [Von_Neumann_architecture.svg](https://commons.wikimedia.org/wiki/File:Von_Neumann_architecture.svg) — Chris-martin and Aeroid, GFDL / CC BY-SA 3.0.
 
 ## Memory peg
 

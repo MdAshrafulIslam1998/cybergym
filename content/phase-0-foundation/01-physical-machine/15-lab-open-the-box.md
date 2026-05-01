@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, lab, hands-on]
 
 > **The only Phase 0 lab that requires a screwdriver. Touch the parts you've been reading about for the last 15 lessons.**
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Computer_from_inside_018.jpg?width=1100" alt="Inside of a desktop computer case with components visible." />
+  <figcaption>The lab goal is simple: turn the black box into a named box. Once you can point at the parts, security stories become much less abstract. Image: Wikimedia Commons, Computer from inside 018.jpg.</figcaption>
+</figure>
+
 ---
 
 ## Why this lab exists
@@ -101,6 +106,10 @@ Physical access defeats most software defences. An attacker who can open your ca
 - **Reflash the firmware chip** with a malicious BIOS (LoJax-style implant).
 
 Knowing the inside of a PC is the first step to thinking about physical-access threat models — which matter for laptops in cafes, BYOD policies, server-room security, and the "evil maid" scenario.
+
+## Reference and image credit
+
+- [Computer_from_inside_018.jpg](https://commons.wikimedia.org/wiki/File:Computer_from_inside_018.jpg) — Kallerna, public domain.
 
 ## Memory peg
 

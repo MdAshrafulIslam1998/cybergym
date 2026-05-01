@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, hardware]
 
 > **In one line:** open the side panel and you'll see eight things — learn their names once and the rest of this chapter is just zooming in on each.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Computer_inside_(1).jpg?width=1100" alt="Inside a desktop computer case with motherboard, expansion cards, cables, and cooling visible." />
+  <figcaption>Do not learn hardware as vocabulary first. Learn it as a room you can point around: board, chip, memory, storage, card, power, cooling, case. Image: Wikimedia Commons, Computer inside (1).jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — IBM's "weekend project" that ate the world
@@ -67,6 +72,10 @@ Each of these parts has its own attack surface and its own forensic value:
    │  Fans ◌ ◌ ◌                          [ I/O on back ]    │
    └──────────────────────────────────────────────────────────┘
 ```
+
+## Reference and image credit
+
+- [Computer_inside_(1).jpg](https://commons.wikimedia.org/wiki/File:Computer_inside_(1).jpg) — Luke, public domain.
 
 ## Memory peg
 

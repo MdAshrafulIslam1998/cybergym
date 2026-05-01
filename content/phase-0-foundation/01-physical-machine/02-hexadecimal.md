@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, fundamentals]
 
 > **In one line:** hex is a way of writing binary that's *just barely* readable by humans, which is why every memory address, hash, MAC address, and crash dump on the planet is in hex.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hexadecimal_multiplication_table.svg?width=850" alt="A hexadecimal multiplication table." />
+  <figcaption>Hex looks strange for about one week. Then it becomes the short, human-readable coat binary wears in debuggers, hashes, packets, and memory dumps. Image: Wikimedia Commons, Hexadecimal multiplication table.svg.</figcaption>
+</figure>
+
 ---
 
 ## A story — IBM's "shorthand"
@@ -61,6 +66,10 @@ When a memory-corruption exploit works, the attacker is overwriting data at hex 
 ```
 
 `0xDEADBEEF` is a famous "obvious filler" value programmers stuff into uninitialised memory — if you see it in a crash dump, somebody's code forgot to set a variable.
+
+## Reference and image credit
+
+- [Hexadecimal_multiplication_table.svg](https://commons.wikimedia.org/wiki/File:Hexadecimal_multiplication_table.svg) — Bernard Ladenthin, CC0.
 
 ## Memory peg
 

@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, io]
 
 > **In one line:** the I/O is everything that crosses the line between the human world and the silicon — and that line is exactly where most attacks come in.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/USB_Type-C.jpg?width=900" alt="A USB Type-C plug on the end of a cable." />
+  <figcaption>I/O ports are doorways. Some carry keystrokes, some carry storage, some carry displays, some carry power, and attackers love doorways. Image: Wikimedia Commons, USB Type-C.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — Doug Engelbart's "mother of all demos"
@@ -67,6 +72,10 @@ For defenders, **endpoint USB control** (block all USB except specific allow-lis
    ────────────────────────       ─────────────────────────
         ↑ attack surface
 ```
+
+## Reference and image credit
+
+- [USB_Type-C.jpg](https://commons.wikimedia.org/wiki/File:USB_Type-C.jpg) — Flanoz, CC0.
 
 ## Memory peg
 

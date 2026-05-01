@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, history]
 
 > **In one line:** a computer is a machine that takes input, follows instructions, and produces output — and it has been that since long before electricity.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/ENIAC_Penn1.jpg?width=1100" alt="Two panels of ENIAC, an early electronic general-purpose computer." />
+  <figcaption>ENIAC looks ancient now, but the deep idea is modern: input comes in, instructions run, output comes out. Image: Wikimedia Commons, ENIAC Penn1.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — the loom that tried to think
@@ -46,6 +51,10 @@ INPUT  →  [ instructions ]  →  OUTPUT
             ▲       │
             └───────┘  (state — what it remembers between steps)
 ```
+
+## Reference and image credit
+
+- [ENIAC_Penn1.jpg](https://commons.wikimedia.org/wiki/File:ENIAC_Penn1.jpg) — Paul W. Shaffer / University of Pennsylvania, GFDL / CC BY-SA 3.0.
 
 ## Memory peg
 

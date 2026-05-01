@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, cpu]
 
 > **In one line:** the CPU is the only thing that *actually does anything* — every other part either feeds it instructions or stores its results.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Intel_4004.jpg?width=800" alt="Intel 4004 microprocessor package." />
+  <figcaption>The Intel 4004 was tiny and slow by modern standards, but it carried the central idea: one general-purpose chip, many possible instructions. Image: Wikimedia Commons, Intel 4004.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — the chip that was meant for a calculator
@@ -64,6 +69,10 @@ The CPU is also the *enforcer* of security. **Privileged execution levels** (Rin
    │   Memory controller ▸  to RAM           │
    └─────────────────────────────────────────┘
 ```
+
+## Reference and image credit
+
+- [Intel_4004.jpg](https://commons.wikimedia.org/wiki/File:Intel_4004.jpg) — LucaDetomi, GFDL / CC BY-SA 3.0.
 
 ## Memory peg
 

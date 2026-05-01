@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, storage]
 
 > **In one line:** storage is the filing cabinet — slow compared to RAM, but it remembers everything when the power's off, which is exactly why forensics exists.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Samsung_NVMe_M.2_970_EVO_Plus_18540.jpg?width=1100" alt="An NVMe M.2 SSD installed on a motherboard." />
+  <figcaption>Modern storage can be a tiny M.2 stick on the motherboard, but forensics still asks the old question: what did this machine remember? Image: Wikimedia Commons, Samsung NVMe M.2 970 EVO Plus 18540.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — IBM's refrigerator with a needle on it
@@ -57,6 +62,10 @@ Storage is *the* forensic playground:
      150 MB/s                500 MB/s              5,000 MB/s
      $15/TB                  $60/TB                $80/TB
 ```
+
+## Reference and image credit
+
+- [Samsung_NVMe_M.2_970_EVO_Plus_18540.jpg](https://commons.wikimedia.org/wiki/File:Samsung_NVMe_M.2_970_EVO_Plus_18540.jpg) — Michael Wolf, CC BY-SA 3.0.
 
 ## Memory peg
 

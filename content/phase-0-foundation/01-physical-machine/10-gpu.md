@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, gpu]
 
 > **In one line:** the GPU started as a chip for drawing triangles fast — and accidentally became the engine of the AI revolution.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nvidia_Geforce_6600GT_GPU_2009-01-27.jpg?width=1100" alt="An Nvidia graphics card with the heatsink removed, exposing the GPU chip." />
+  <figcaption>A GPU is not just a display part anymore. It is a parallel calculator, which is why password cracking, crypto mining, simulation, and AI all care about it. Image: Wikimedia Commons, Nvidia Geforce 6600GT GPU 2009-01-27.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — from Quake to ChatGPT
@@ -60,6 +65,10 @@ If you're not doing graphics, scientific simulation, crypto mining, or AI — yo
                                   └──────────────────────┘
    sequential, low-latency        parallel, high-throughput
 ```
+
+## Reference and image credit
+
+- [Nvidia_Geforce_6600GT_GPU_2009-01-27.jpg](https://commons.wikimedia.org/wiki/File:Nvidia_Geforce_6600GT_GPU_2009-01-27.jpg) — Henry Muehlpfordt, CC BY-SA 3.0.
 
 ## Memory peg
 

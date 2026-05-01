@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, boot]
 
 > **In one line:** between you pressing the power button and seeing the login screen, *seven* distinct programs run in a chain — and a foothold at any one of them owns the rest.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/UEFI_boot_process.png?width=1200" alt="UEFI boot process block diagram." />
+  <figcaption>Boot is a chain of trust. Every step loads or trusts the next one, so early compromise becomes very powerful. Image: Wikimedia Commons, UEFI boot process.png.</figcaption>
+</figure>
+
 ---
 
 ## A story — Stuxnet, the worm that walked the chain
@@ -80,6 +85,10 @@ For a defender investigating a compromised machine, the boot chain is your foren
 
    ↑ each step trusts the previous. Compromise step N → own steps N+1 to 7.
 ```
+
+## Reference and image credit
+
+- [UEFI_boot_process.png](https://commons.wikimedia.org/wiki/File:UEFI_boot_process.png) — Amila Ruwan 20, CC BY-SA 4.0.
 
 ## Memory peg
 

@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, hardware]
 
 > **In one line:** every joule of electricity a computer drinks becomes either a calculation or *heat* — and unmanaged heat kills chips.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Power_Supply_ATX-450PNF.jpg?width=1000" alt="An ATX computer power supply unit." />
+  <figcaption>The PSU is the quiet dependency: bad power and bad cooling turn beautiful computing into heat, crashes, throttling, or fire. Image: Wikimedia Commons, Power Supply ATX-450PNF.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — the data centre that drinks rivers
@@ -65,6 +70,10 @@ For *defenders*, the lesson is simpler: monitor temperature and power. Anomalies
 
    Heat path: chip → paste → heatsink → fins → fan → outside
 ```
+
+## Reference and image credit
+
+- [Power_Supply_ATX-450PNF.jpg](https://commons.wikimedia.org/wiki/File:Power_Supply_ATX-450PNF.jpg) — Victor Korniyenko, CC BY-SA 3.0.
 
 ## Memory peg
 

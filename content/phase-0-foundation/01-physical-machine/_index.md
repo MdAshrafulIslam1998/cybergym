@@ -10,9 +10,16 @@ tags: [phase-0, physical-machine, hardware, index]
 
 > **In one line:** before you defend a computer, you should know what one actually is — down to the box and the wires.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Computer_from_inside_018.jpg?width=1100" alt="The inside of a desktop computer case showing the motherboard and connected components." />
+  <figcaption>A computer stops being mysterious once you see the inside: board, wires, slots, fans, storage, power. Image: Wikimedia Commons, Computer from inside 018.jpg.</figcaption>
+</figure>
+
 Most security people skip hardware. They learn it the hard way years later — when they hit a buffer overflow that doesn't make sense, or a BIOS rootkit they can't see, or a side-channel attack on a CPU register they didn't know existed.
 
 We won't skip it. This chapter walks you through the machine like a curious mechanic walks around a car for the first time.
+
+The tone for this chapter is simple: **touch the real thing first, name the technical thing second, then ask what an attacker would do with it.** That is the Feynman-style ladder for hardware security.
 
 By the end you'll be able to:
 
@@ -38,3 +45,7 @@ By the end you'll be able to:
 14. [[13-bios-uefi|0.1.14 BIOS / UEFI — the pre-OS whisper]]
 15. [[14-boot-sequence|0.1.15 The full boot sequence]]
 16. 🧪 [[15-lab-open-the-box|0.1.L1 Lab — open the box]]
+
+## Image credit
+
+- [Computer_from_inside_018.jpg](https://commons.wikimedia.org/wiki/File:Computer_from_inside_018.jpg) — Kallerna, public domain.

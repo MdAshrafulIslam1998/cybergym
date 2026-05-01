@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, hardware]
 
 > **In one line:** the motherboard is the city — the CPU is downtown, RAM and SSD are the suburbs, and the buses are the highways carrying bytes between them.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Computer-motherboard.jpg?width=1100" alt="A desktop motherboard showing sockets, slots, chips, and connectors." />
+  <figcaption>The motherboard is the physical map of the machine: sockets, slots, copper traces, firmware chip, and roads for bytes. Image: Wikimedia Commons, Computer-motherboard.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — the city that grew an open standard
@@ -70,6 +75,10 @@ The motherboard is the city — and there are corners attackers love:
    │   └───────────┘  └──────┘  └─────┘           │
    └──────────────────────────────────────────────┘
 ```
+
+## Reference and image credit
+
+- [Computer-motherboard.jpg](https://commons.wikimedia.org/wiki/File:Computer-motherboard.jpg) — Marcin Wieclaw, CC BY-SA 4.0.
 
 ## Memory peg
 

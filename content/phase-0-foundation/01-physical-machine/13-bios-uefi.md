@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, firmware, bios]
 
 > **In one line:** BIOS / UEFI is the tiny firmware program that wakes up *before* Windows or Linux — and if an attacker owns *it*, your antivirus will never know.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AMIBIOS.jpg?width=900" alt="An AMIBIOS firmware chip on a motherboard." />
+  <figcaption>Firmware is software with a hiding place. This little chip can decide what runs before the operating system is even awake. Image: Wikimedia Commons, AMIBIOS.jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — the firmware that survived Stalin
@@ -75,6 +80,10 @@ Defences:
 
    bootkit lives ↑↑↑ here ↑↑↑ — invisible to OS-level AV
 ```
+
+## Reference and image credit
+
+- [AMIBIOS.jpg](https://commons.wikimedia.org/wiki/File:AMIBIOS.jpg) — Hansiman33xd, CC0.
 
 ## Memory peg
 

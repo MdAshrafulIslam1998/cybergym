@@ -11,6 +11,11 @@ tags: [phase-0, physical-machine, memory]
 
 > **In one line:** RAM is the working space where your computer keeps everything it's currently using — and *everything* in there is in plaintext, until the power goes off.
 
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAM_Module_(SDRAM-DDR4).jpg?width=1100" alt="A DDR4 RAM module." />
+  <figcaption>A RAM stick looks boring. During runtime, it can hold passwords, tokens, decrypted files, malware, and the exact story of what the machine is doing. Image: Wikimedia Commons, RAM Module (SDRAM-DDR4).jpg.</figcaption>
+</figure>
+
 ---
 
 ## A story — the magnetic donuts of the 1950s
@@ -71,6 +76,10 @@ For offence, **Rowhammer**, **Meltdown**, and **DMA attacks** (Direct Memory Acc
      │  ... your typed password ...     │
      └──────────────────────────────────┘
 ```
+
+## Reference and image credit
+
+- [RAM_Module_(SDRAM-DDR4).jpg](https://commons.wikimedia.org/wiki/File:RAM_Module_(SDRAM-DDR4).jpg) — ElooKoN, CC BY-SA 4.0.
 
 ## Memory peg
 
