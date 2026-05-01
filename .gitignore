@@ -30,3 +30,6 @@ secrets/
 
 # Drafts not ready for publish
 **/_draft_*.md
+
+# Claude Code anchor file (auto-created in some sessions)
+CLAUDE.md
