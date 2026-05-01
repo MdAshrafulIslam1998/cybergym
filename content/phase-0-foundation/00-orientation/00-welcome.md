@@ -12,59 +12,56 @@ tags:
 
 # 0.0.1 Welcome
 
-> **In one line:** Welcome to CyberGym. This is *your* course on cybersecurity. Read it, edit it, break it, rebuild it.
+> **In one line:** this is a public cybersecurity curriculum, written from the ground up at "I just walked in off the street" level. Read it, edit it, fork it, learn from it.
 
 ---
 
 ## What this vault is
 
-CyberGym is a **lifelong, public, owned cybersecurity curriculum**, written from the ground up at "I just walked in off the street" level. It's not a textbook. It's not a study log. It's a *course built for one student* — and that student is whoever's reading.
+CyberGym is a **public, owned cybersecurity curriculum** — not a textbook, not a study log, but a *course built for one student at a time*. The first student is whoever is reading.
 
 Two ideas to plant before anything else:
 
 > [!tip] Idea 1 — Layered cake, not a tower
-> We don't go deep on one thing before touching the next. We touch *all six topic areas* in Phase 0 — machine, OS, networking, security, cloud, AI security — and then come back deeper in later phases. Like building a 100-story building: skeleton across all floors first, then cement, then tiles.
+> Curricula here do not go deep on one thing before touching the next. Phase 0 touches all six topic areas — machine, OS, networking, security, cloud, AI security — and later phases come back deeper. Like building a 100-story building: skeleton across all floors first, then cement, then tiles.
 
 > [!tip] Idea 2 — Living notes
-> Every note here is *v0.1*. You'll re-read it, fix the parts you didn't get, add what you wish it had said, rewrite it in your own words. By Phase 2 you'll laugh at the Phase 0 version. That's the point.
+> Every note here is *v0.1*. Re-read it, fix the parts that didn't land, add what was missing, rewrite it in different words. By Phase 2 the reader will laugh at the Phase 0 version. That is the point.
 
 ---
 
-## Who wrote this and why
+## Why this exists
 
-I'm **Ashraful** — a working data scientist and ML engineer in Sydney, on a student visa, doing a Master of Data Science at Charles Darwin University. I'm pivoting into cybersecurity, specifically:
+Cybersecurity curricula tend to fall into two failure modes. The "academic" version drowns the new learner in OSI layers, formal models, and theory walls. The "bootcamp" version flips the opposite way — drill-and-kill on certification questions, no understanding, brittle skill that crumbles the moment a real incident does not match a textbook scenario.
 
-1. **Cloud Security** first — because that's where every modern company lives now
-2. **AI/ML Security** later — because my DS/ML background is rare in security, and that's the long-term career bet
+CyberGym tries a third path: **build the mental model first, then layer technical depth on top of it**. Every concept is introduced with a story, an analogy, or a real-world incident. Then — only then — does the technical detail arrive, and it arrives tied to a security stake. *Why does this matter when something attacks it? What does an investigator look for? How does a defender prevent it?*
 
-I had to choose between watching a hundred cybersecurity YouTube videos for a year, or *writing my own course* and learning by teaching. I chose the second. This vault is the course.
-
-You might be a different person with a different end goal — that's fine. The foundations are the same. Cloud security, AI security, defensive engineering, offensive testing, compliance — they all sit on top of "you understand how a computer works."
+The curriculum is opinionated. It tilts toward **Cloud Security first** (the most employable surface in 2026) and **AI/ML Security second** (the long-term differentiator now that every system is becoming an AI system). Phase 0 is foundational and stays general — anyone, going into any cyber niche, can use it.
 
 ---
 
 ## What you'll learn (the short version)
 
-By the end of **Phase 0** alone, you should be able to:
+By the end of **Phase 0** alone, a reader should be able to:
 
-- Open up a PC and name every part inside, and explain what attackers care about for each
+- Open up a PC and name every part inside, plus what attackers care about for each
 - Use Linux from the terminal for daily tasks
-- Read a Wireshark packet capture and explain what's happening
-- Read code in Python, Bash, JavaScript, SQL, and recognize C and PowerShell
+- Read a Wireshark packet capture and explain what is happening
+- Read code in Python, Bash, JavaScript, SQL, and recognise C and PowerShell
 - Speak the security vocabulary fluently — every term in OWASP Top 10
-- Have a working AWS account with a small EC2 and S3 bucket you've used
+- Have a working AWS account with a small EC2 and S3 bucket they have used
 - Explain prompt injection and the OWASP LLM Top 10 by name
 
-Phase 0 alone is months of work. Don't rush. The point is *understanding*, not speed.
+Phase 0 alone is months of work. The point is *understanding*, not speed.
 
 ---
 
 ## How to read this vault
 
-You have three modes:
+There are three modes:
 
 1. **Linear** — follow the [[00-Course-Map|Course Map]] from 0.0.1 → 0.0.2 → 0.1.1 → ... in order. Recommended for first-time readers.
-2. **Topic-pull** — pick the topic area that interests you (Machine? Networking? Cloud?) and follow its thread.
+2. **Topic-pull** — pick the topic area that interests you (Machine? Networking? Cloud?) and follow its thread through every phase.
 3. **Reference** — search for a term, land on a single note, read it standalone. Each note is designed to make sense on its own.
 
 > [!example] Where to go after this note
@@ -74,10 +71,6 @@ You have three modes:
 
 ## A note on tone
 
-I write here like a knowledgeable friend explaining things over coffee — not a professor at a podium. If a paragraph feels like it's lecturing you, that's a bug. Tell me (or fix it yourself; the vault is editable).
+The voice here is a knowledgeable friend explaining things over coffee — not a professor at a podium. If a paragraph reads like it's lecturing, that is a bug. File it as one.
 
-If a note assumes a word you don't know, **define it in [[04-glossary|the glossary]]** and link both directions. The glossary is a living artifact.
-
----
-
-*Last updated: 2026-04-30*
+If a note assumes a word the reader does not know, **define it in [[04-glossary|the glossary]]** and link both directions. The glossary is a living artifact that grows with every lesson.

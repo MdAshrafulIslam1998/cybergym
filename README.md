@@ -1,43 +1,38 @@
-# Ampara — Cybersecurity from Zero, AI-Security Beyond
+# CyberGym
 
-> A lifelong, public, owned knowledge base. My personal course on cybersecurity, written as I learn it. Sydney, Australia.
+> A public cybersecurity knowledge base — built as a personal curriculum, not a study log.
 
-This repository is both my **second brain** and my **portfolio**. It is structured as a curriculum, not a journal. Every module is a syllabus I expand over time as I work through certifications, labs, papers, and projects.
+CyberGym is a Quartz v4 static site that publishes a lifelong cybersecurity curriculum, structured as four phases (Foundation → Security+ → AWS Security Specialty → GIAC GAIA) across six topic areas (Machine, OS, Networking, Security, Cloud, AI/ML Security).
 
-## Why this exists
+The content is written at street-smart adult, non-CSE-background level. Analogies first, technical detail second. Every note is portfolio-quality and ties concepts back to "why this matters for security, cloud, or AI."
 
-I'm a data scientist / ML engineer pivoting into cybersecurity, with a focus on the AI-security crossover (adversarial ML, LLM red teaming, ML for threat detection, securing AI systems). I want a single place that is:
+## Live site
 
-- **Owned** — plain markdown files in Git, not a SaaS database I can lose access to.
-- **Searchable** — full-text search both locally (Obsidian) and publicly (Quartz site).
-- **Embeddable** — diagrams, videos, code, attack walkthroughs, lab screenshots all welcome.
-- **AI-native** — Claude can crawl the entire vault to answer questions, draft summaries, generate flashcards, or quiz me.
-- **Public-facing** — the same files that power my study also publish to my personal site as a digital garden, doubling as proof of skill for hiring managers and migration assessors.
+https://mdashrafulislam1998.github.io/cybergym/
 
-## How it's built
+## Stack
 
-| Layer | Tool |
-|-------|------|
-| Editor | [Obsidian](https://obsidian.md) (local markdown) |
-| Version control | Git + this GitHub repo |
-| Publisher | [Quartz v4](https://quartz.jzhao.xyz) (static site generator, full-text search built in) |
-| Hosting | Self-managed VPS under the `trupples` domain |
-| AI search | Claude (via Cowork) reads this folder directly |
+- Editor: Obsidian (local Markdown)
+- Versioning: Git (this repo)
+- Publisher: Quartz v4
+- Hosting: GitHub Pages (auto-deploy on push to `v4`)
 
-See [PUBLISHING.md](PUBLISHING.md) for setup details.
+## Local layout
 
-## Where to start reading
+```
+content/                        ← published markdown
+quartz/                         ← Quartz framework
+quartz.config.ts                ← site config
+CYBERGYM_PUSH.ps1               ← publish: commit + push + mirror Drive
+CYBERGYM_PULL.ps1               ← pull latest from GitHub into Ampara
+SYNC_DRIVE.ps1                  ← mirror Ampara folder onto Drive vault
+SYNC_DRIVE.ahk                  ← AutoHotkey hotkey (Ctrl+Alt+G) to run SYNC_DRIVE
+```
 
-- **[00-Course-Map](00-Course-Map.md)** — full curriculum index, the "home" of the vault
-- **[01-Roadmap](01-Roadmap/)** — career roadmap, certification stack, PR pathway
-- **[02-Foundations](02-Foundations/)** — Module 1: how computers, networks, and operating systems actually work
-- **[07-Certifications](07-Certifications/)** — exam prep notes per certification
+See [PUBLISHING.md](PUBLISHING.md) for the full publish workflow.
 
 ## Status
 
 - **Started:** 2026-04-30
-- **Target output (mid-2027 → 2028):** Cybersecurity / AI-security internship in Sydney, certification-stacked CV, ANZSCO 262112 PR pathway readiness.
-
----
-
-*Ashraful (Trupples) — Sydney, Australia.*
+- **Current phase:** 0 (Foundation)
+- **Currently writing:** chapters 0.0 and 0.1
