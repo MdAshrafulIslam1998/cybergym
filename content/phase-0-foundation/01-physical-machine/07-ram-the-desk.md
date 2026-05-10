@@ -40,18 +40,17 @@ RAM is **volatile**: the moment you cut power, every bit returns to garbage with
 
 DRAM works by storing each bit as **charge in a tiny capacitor**. The capacitor leaks charge over milliseconds, so the memory controller has to **refresh** every cell thousands of times per second — read and rewrite each row. That refresh cycle is also the basis for the **Rowhammer** family of attacks.
 
-## Why a hacker cares
+## Why an engineer cares
 
-RAM is the **goldmine of forensic and offensive value** because *everything is in plaintext while the program is running*:
+RAM is the universal currency of performance:
 
-- **Decrypted documents** — the disk file may be encrypted, but the open document in your editor lives unencrypted in RAM.
-- **Encryption keys** — your VeraCrypt, BitLocker, full-disk-encryption keys all sit in RAM while you're logged in. Cold-boot attacks chill the RAM with cooling spray (slowing the leak) and dump it before it forgets.
-- **Passwords** — typed credentials, browser-stored cookies, session tokens, OAuth bearer tokens — all of them touch RAM in plaintext.
-- **Live malware** — RAM-resident malware that never writes to disk. Antivirus that only scans files misses it. This is **fileless malware** and it's a major modern threat.
+- **Memory budgets matter** — running a 7B-parameter LLM needs ~14 GB at fp16. A 70B model needs ~140 GB, which is why GPUs are so expensive. Knowing the math means knowing what you can actually run.
+- **OOM kills** — when a server runs out of memory, the kernel kills the biggest process (the OOM killer). One of the most common production outages.
+- **Memory leaks** — long-running processes that slowly grow until they OOM. Profilers (`pprof`, `valgrind`, `tracemalloc`) are the tools.
+- **Swap thrashing** — when RAM is full, the OS swaps to disk. Performance falls off a cliff. "Why is this server so slow" is often "it's swapping."
+- **DRAM bandwidth as bottleneck** — modern CPUs are often *memory-bandwidth-bound*, not compute-bound. Optimising memory access patterns wins more than micro-optimising the loop body.
 
-For defenders, **memory forensics** (tools like Volatility, Rekall) is its own specialty. Triage an incident, dump RAM first, *then* image the disk — because RAM tells you what was *running*, while the disk only tells you what's *stored*.
-
-For offence, **Rowhammer**, **Meltdown**, and **DMA attacks** (Direct Memory Access from a malicious USB or Thunderbolt device) all let attackers read or modify RAM they shouldn't be able to touch.
+RAM is fast but finite. Senior engineers think in memory budgets the way junior engineers think in lines of code.
 
 ## In one sketch
 

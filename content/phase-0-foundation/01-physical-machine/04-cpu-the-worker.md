@@ -41,16 +41,15 @@ A modern CPU has multiple **cores** — independent workers on the same chip —
 
 The CPU also has **caches** built in (we'll cover those in 0.1.7) — tiny, fast scratchpads of memory right next to the cores so they don't have to wait for slow RAM every time they need a value.
 
-## Why a hacker cares
+## Why an engineer cares
 
-The CPU is a target *and* a weapon:
+The CPU is the heart of every performance discussion:
 
-- **Spectre and Meltdown (2018)** — vulnerabilities in how CPUs do speculative execution that let untrusted code read memory it shouldn't. Affected basically every Intel chip from the previous 20 years. Patched in microcode + OS.
-- **Microcode** — the CPU's own internal firmware. Intel and AMD ship microcode updates inside Windows / Linux updates. Compromise the microcode and you have a backdoor below the OS.
-- **Side-channel attacks** — measure how long an instruction takes, or how much power it draws, and you can sometimes *recover encryption keys* from a CPU performing the encryption. Smart-card attacks have been doing this for 25 years.
-- **Cryptojacking** — malware that quietly uses your CPU to mine cryptocurrency. Slow computer, hot lap, weird power bill.
-
-The CPU is also the *enforcer* of security. **Privileged execution levels** (Ring 0 = kernel, Ring 3 = userland) are a CPU feature. **Virtualisation extensions** that let one machine run many isolated VMs are CPU features. **TPM and secure-enclave chips** are tiny CPUs whose only job is to keep secrets the main CPU can't see.
+- **Cores and threads** — modern code that doesn't take advantage of multiple cores leaves the box mostly idle. Knowing the difference between *parallelism* (many cores) and *concurrency* (one core, juggling) is the difference between a senior and a junior.
+- **Clock speed vs IPC (instructions per cycle)** — 3 GHz isn't always faster than 2.5 GHz; modern CPUs do more per tick.
+- **Microcode updates** — Intel and AMD ship CPU bug-fixes through the OS. Knowing this exists explains why a kernel update sometimes changes performance.
+- **CPU vs GPU vs accelerator** — your engineering instinct should be "what is the right silicon for this workload?" — CPUs for branchy logic, GPUs for parallel matmul, TPUs/NPUs for ML inference.
+- **ARM vs x86** — Apple Silicon, AWS Graviton, mobile devices are all ARM. Code needs to be portable; performance assumptions don't carry across architectures.
 
 ## In one sketch
 

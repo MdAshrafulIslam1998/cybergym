@@ -38,11 +38,11 @@ Strip away the screen and keyboard. A computer is **three things in a loop**:
 
 That's it. The "thinking" is an illusion produced by doing this loop billions of times per second on data that came from somewhere and is going somewhere else.
 
-## Why a hacker cares
+## Why an engineer cares
 
-Every cyber attack happens at one of those three points. **Input attacks** are the biggest family — SQL injection, prompt injection, buffer overflows, malformed packets — all of them are "I gave the machine input it didn't expect, and made it do something the programmer didn't plan for." **Processing attacks** are rarer and uglier — Spectre, Meltdown, side-channel attacks on the CPU itself. **Output attacks** are how data leaks — reading log files, screenshots, network exfiltration.
+Almost all of real-world engineering happens at one of those three points. **Input handling** is where most bugs live — bad input the program didn't expect, missing fields, wrong types, encoding mismatches, races at the boundary. **Processing** is where performance lives — slow algorithms, lock contention, cache misses, memory copies that didn't need to happen. **Output** is where reliability lives — incomplete writes, retries, idempotency, timeouts.
 
-If you remember nothing else from this lesson, remember: **a computer is a thing that follows instructions on input it was given.** When something goes wrong in security, the bug is almost always in *what the input was* or *what the instruction said*.
+If you remember nothing else from this lesson, remember: **a computer is a thing that follows instructions on input it was given.** When something goes wrong in production, the bug is almost always in *what the input was* or *what the instruction said* — not in the machine itself.
 
 ## In one sketch
 

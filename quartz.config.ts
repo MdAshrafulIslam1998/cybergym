@@ -2,13 +2,13 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Quartz 4 Configuration — CyberGym
+ * Quartz 4 Configuration — _thewozniakfile
  *
  * See https://quartz.jzhao.xyz/configuration for more information.
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🍉_cybergym",
+    pageTitle: "🍉_thewozniakfile",
     pageTitleSuffix: "",
     favicon: "🍉",
     enableSPA: true,
@@ -17,7 +17,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "mdashrafulislam1998.github.io/cybergym",
+    baseUrl: "mdashrafulislam1998.github.io/_thewozniakfile",
     ignorePatterns: ["private", "templates", "99-Templates", "_local", ".obsidian"],
     defaultDateType: "created",
     theme: {

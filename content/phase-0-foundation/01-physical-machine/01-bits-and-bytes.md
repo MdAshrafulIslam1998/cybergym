@@ -43,11 +43,16 @@ Once you have bytes, you can encode anything by agreeing on a code:
 
 There is *no* deep meaning to a byte. It's just eight bits. Whether `01000001` means "the letter A," "the number 65," or "the colour value 65" depends entirely on what code the program is using to read it.
 
-## Why a hacker cares
+## Why an engineer cares
 
-This is the secret door. **Bytes don't carry their meaning with them.** If a program is told to read 100 bytes of "user input" and treat them as text, but the user crafts those 100 bytes to *also* be valid CPU instructions, and somehow tricks the CPU into running them — that's a **buffer overflow** and that's how a huge fraction of historical exploits worked (Morris worm 1988, Code Red 2001, Heartbleed 2014).
+Bits and bytes show up the moment you leave the cosy world of high-level languages:
 
-The whole field of memory-safety vulnerabilities exists because **the same bits can be interpreted as data or as code, and the CPU can't always tell which is which.** Every modern defence (DEP, ASLR, stack canaries, memory-safe languages like Rust) is an attempt to put guardrails around this fundamental ambiguity.
+- **Endianness** bites every engineer who has to serialize data across machines (network protocols, file formats, GPUs talking to CPUs).
+- **Numeric precision** — `0.1 + 0.2 != 0.3` in float math. Money should never be in float. ML training uses fp16 / bf16 / int8 to fit bigger models in the same memory.
+- **Memory layout** — packing structs, alignment, cache lines. Performance work lives here.
+- **Database column types** — `int` vs `bigint`, `varchar(255)` vs `text`, `timestamp` precision — every choice is bytes on disk.
+
+The same bits can mean different things depending on how the program reads them. Most data bugs are interpretation bugs.
 
 ## In one sketch
 

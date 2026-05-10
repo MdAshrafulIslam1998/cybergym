@@ -38,15 +38,17 @@ NVMe is the standard for any new build. The little M.2 stick on a modern motherb
 
 But "fast" hides a complication. NAND flash **wears out**. Each cell can only be written a limited number of times (a few thousand, for consumer drives). SSDs spread writes across the whole drive (**wear levelling**) to make this invisible — but if you're filling and clearing a drive constantly, you'll eventually exhaust it.
 
-## Why a hacker cares
+## Why an engineer cares
 
-Storage is *the* forensic playground:
+Storage is where data lives between requests, and the choice shapes everything downstream:
 
-- **Deleted ≠ gone.** When you delete a file, the OS marks the bytes as "free" — it does not erase them. Forensic tools (FTK, EnCase, Autopsy) recover deleted files from the unallocated space. To actually erase: **secure delete** (overwrite, multi-pass) on HDDs, or the drive's built-in **Secure Erase** command (or full-disk encryption + key destroy) on SSDs.
-- **SSD wear levelling makes secure deletion harder.** Overwriting "the file" doesn't help — the controller may have already moved the original blocks somewhere else and just remapped the pointer. The only reliable wipes for SSDs are the firmware-level Secure Erase or destruction.
-- **Slack space and unallocated space** — every file that doesn't perfectly fill its allocated blocks leaves bytes of the previous file in the leftover. Forensics loves this.
-- **Encrypted drives** — full-disk encryption (BitLocker, LUKS, FileVault) is the single best defence against an attacker who steals the laptop. Without the key, the drive is noise. With the key (i.e., while the user is logged in), it's transparent.
-- **Disk imaging** is the first thing an incident responder does. Pull the disk, take a bit-for-bit copy, work on the copy. Never investigate the original.
+- **IOPS and throughput** — NVMe pushes 500k+ IOPS; a spinning HDD pushes 100. That's a 5000x difference. Database performance is bound here.
+- **Sequential vs random access** — log files love sequential, key-value stores love random. Pick the wrong storage and you pay 100x.
+- **Latency budgets** — RAM is ns, NVMe is µs, SSD is µs–ms, HDD is ms, network is ms. Each layer is roughly 1000x slower. Caches exist because of this gap.
+- **Database choice** — Postgres on NVMe is a beast. The same Postgres on HDD is a tortoise. Cloud RDS pricing reflects this; choosing the wrong tier is a real cost.
+- **Cold storage / object storage** — S3 isn't disk, it's API-fronted blobs with very different latency characteristics. Knowing when to use S3 vs RDS vs DynamoDB is system design 101.
+
+Storage isn't just "where the bytes go." It's a performance decision with cost attached.
 
 ## In one sketch
 

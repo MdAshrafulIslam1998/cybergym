@@ -1,6 +1,6 @@
 ---
 title: Course Map
-description: The full CyberGym curriculum as a tree — all four phases, all six topic areas, every chapter and lesson laid out in one place.
+description: The full _thewozniakfile curriculum as a tree — five phases across software engineering, hardware, and AI, every chapter and lesson laid out in one place.
 tags:
   - map
   - curriculum
@@ -20,20 +20,20 @@ The whole journey, one page. Use this as your map.
 
 ```mermaid
 graph TD
-  CG[🍉 CyberGym] --> P0[Phase 0<br/>Foundation]
-  CG --> P1[Phase 1<br/>Security+]
-  CG --> P2[Phase 2<br/>AWS Sec Specialty]
-  CG --> P3[Phase 3<br/>GIAC GAIA]
-  CG --> P4[Phase 4<br/>Practitioner]
+  WZ[🍉 _thewozniakfile] --> P0[Phase 0<br/>Foundation]
+  WZ --> P1[Phase 1<br/>Software Engineering Core]
+  WZ --> P2[Phase 2<br/>Cloud · Distributed · Production]
+  WZ --> P3[Phase 3<br/>AI / ML Engineering]
+  WZ --> P4[Phase 4<br/>Practitioner · Research]
 
   P0 --> P0_0[0.0 Orientation]
   P0 --> P0_1[0.1 Physical Machine]
   P0 --> P0_2[0.2 Operating System]
   P0 --> P0_3[0.3 Networking]
-  P0 --> P0_4[0.4 Programming Literacy]
-  P0 --> P0_5[0.5 Security Foundations]
-  P0 --> P0_6[0.6 Cloud Intro]
-  P0 --> P0_7[0.7 AI/ML Security Intro]
+  P0 --> P0_4[0.4 Programming Foundations]
+  P0 --> P0_5[0.5 Computational Thinking]
+  P0 --> P0_6[0.6 Cloud, Intro]
+  P0 --> P0_7[0.7 What is AI, really]
   P0 --> P0_8[0.8 Capstone]
 
   style P0 fill:#ffcc66,stroke:#333,stroke-width:2px
@@ -43,17 +43,18 @@ graph TD
   style P4 fill:#eee,stroke:#999
 ```
 
-> Phase 0 is **active**. Phases 1-4 are **planned** — they'll be designed in detail later.
+> Phase 0 is **active**. Phases 1–4 are **planned** — they'll be designed in detail later.
+> The spiral is *flexible*: not every topic appears in every phase. Topics show up where they belong.
 
 ---
 
 ## 🟧 Phase 0 — Foundation (active)
 
-> **Goal:** Kindergarten → masters-level practical understanding across all six topic areas. From "what is a computer" to "I can navigate AWS, read code in three languages, and explain prompt injection."
+> **Goal:** Kindergarten → working baseline across the bones of computing. From "what is a computer" to "I can navigate Linux, write small Python programs, deploy a cloud VM, and explain what an LLM actually does."
 
 ### Chapter 0.0 — Orientation
 
-> Set up your tools, learn how to read the vault, meet the six topic areas.
+> Set up your tools, learn how to read the vault, meet the topic areas.
 
 - ✅ [[phase-0-foundation/00-orientation/00-welcome|0.0.1 Welcome]]
 - ✅ [[phase-0-foundation/00-orientation/01-the-six-topic-areas|0.0.2 The 6 topic areas]]
@@ -67,7 +68,7 @@ graph TD
 
 - ✅ [[phase-0-foundation/01-physical-machine/00-what-is-a-computer|0.1.1 What a computer actually is]]
 - ✅ [[phase-0-foundation/01-physical-machine/01-bits-and-bytes|0.1.2 Bits and bytes — how machines count]]
-- ✅ [[phase-0-foundation/01-physical-machine/02-hexadecimal|0.1.3 Hexadecimal and why hackers love it]]
+- ✅ [[phase-0-foundation/01-physical-machine/02-hexadecimal|0.1.3 Hexadecimal and why engineers love it]]
 - ✅ [[phase-0-foundation/01-physical-machine/03-tour-of-a-pc|0.1.4 Tour of a PC tower]]
 - ✅ [[phase-0-foundation/01-physical-machine/04-cpu-the-worker|0.1.5 The CPU — the worker]]
 - ✅ [[phase-0-foundation/01-physical-machine/05-fetch-decode-execute|0.1.6 How a CPU runs one instruction]]
@@ -96,7 +97,7 @@ graph TD
 - ⬜ Users, groups, permissions
 - ⬜ Windows daily-user view
 - ⬜ Windows internals 1 — Registry, services, scheduled tasks
-- ⬜ Windows internals 2 — Event Viewer, Task Manager (security lens)
+- ⬜ Windows internals 2 — Event Viewer, Task Manager (engineer's lens)
 - ⬜ Linux — what and why
 - ⬜ Linux filesystem hierarchy
 - ⬜ Linux users, sudo, permissions
@@ -137,50 +138,42 @@ graph TD
 
 📂 [[phase-0-foundation/03-networking/index|See chapter index →]]
 
-### Chapter 0.4 — Programming Literacy ⬜
+### Chapter 0.4 — Programming Foundations ⬜
 
-> *Skeleton only. You don't need to write all these — you need to read them.*
+> *Skeleton only. One language deep, then literacy across more.*
 
 - ⬜ What "code" really is
 - ⬜ Compiled vs interpreted (revisited)
-- ⬜ Python refresher (security lens)
-- ⬜ Bash refresher
-- ⬜ PowerShell refresher
-- ⬜ Reading C — pointers, memory, why malware lives here
-- ⬜ Reading JavaScript
-- ⬜ Reading SQL — and where injection happens
+- ⬜ Python — variables, types, control flow
+- ⬜ Python — functions, modules, packages
+- ⬜ Python — file I/O, error handling
+- ⬜ Python — OOP basics
+- ⬜ Reading JavaScript / TypeScript
+- ⬜ Reading C — pointers, memory, why low-level still matters
+- ⬜ Reading SQL — and why every engineer needs this
+- ⬜ Bash and shell scripting
 - ⬜ Regex literacy
-- ⬜ YAML and JSON — the cloud config languages
+- ⬜ YAML and JSON — the config languages
 - ⬜ Reading HTTP requests/responses
 
-📂 [[phase-0-foundation/04-programming-literacy/index|See chapter index →]]
+📂 [[phase-0-foundation/04-programming-foundations/index|See chapter index →]]
 
-### Chapter 0.5 — Security Foundations ⬜
+### Chapter 0.5 — Computational Thinking ⬜
 
-> *Skeleton only. The heart of Phase 0.*
+> *Skeleton only. The thinking moves under all the syntax.*
 
-- ⬜ Why we need security — three breach stories
-- ⬜ The CIA triad
-- ⬜ Threats, vulnerabilities, exploits, risk
-- ⬜ AAA — Authentication, Authorization, Accounting
-- ⬜ Defense in depth
-- ⬜ Zero trust
-- ⬜ Threat actor types
-- ⬜ Hashing — one-way math
-- ⬜ Symmetric crypto (AES)
-- ⬜ Asymmetric crypto (RSA, ECC)
-- ⬜ Digital signatures
-- ⬜ Certificates and PKI revisited
-- ⬜ Common attacks 1 — phishing, social engineering
-- ⬜ Common attacks 2 — malware families
-- ⬜ Common attacks 3 — MITM, replay, brute force
-- ⬜ Web attacks intro — SQLi, XSS, CSRF
-- ⬜ MITRE ATT&CK as a map
-- ⬜ OWASP Top 10 walkthrough
-- 🧪 Lab A — Crack a hash with Hashcat
-- 🧪 Lab B — DVWA / PortSwigger Academy basics
+- ⬜ Problem decomposition — splitting a hard thing into smaller things
+- ⬜ Algorithms intro — what a recipe really is
+- ⬜ Time and space complexity in plain English
+- ⬜ Arrays and lists
+- ⬜ Dictionaries / hash maps — the unsung hero
+- ⬜ Trees and graphs as ideas
+- ⬜ Recursion — the mind-bender
+- ⬜ Search and sort intuitions
+- ⬜ Mental models for debugging
+- ⬜ When to write code vs use a tool
 
-📂 [[phase-0-foundation/05-security-foundations/index|See chapter index →]]
+📂 [[phase-0-foundation/05-computational-thinking/index|See chapter index →]]
 
 ### Chapter 0.6 — Cloud, Intro ⬜
 
@@ -193,83 +186,91 @@ graph TD
 - ⬜ Regions, AZs, edge
 - ⬜ Sign up for AWS Free Tier safely
 - ⬜ Your first EC2
-- ⬜ Your first S3 bucket (and the famous "S3 leak" pattern)
+- ⬜ Your first S3 bucket
 - ⬜ IAM intro
 - ⬜ The Shared Responsibility Model
-- ⬜ Real cloud horror story (Capital One / Accenture)
+- ⬜ What "serverless" really means
 - ⬜ Cloud cost discipline
 
 📂 [[phase-0-foundation/06-cloud-intro/index|See chapter index →]]
 
-### Chapter 0.7 — AI/ML Security, Intro ⬜
+### Chapter 0.7 — What is AI, really ⬜
 
-> *Skeleton only.*
+> *Skeleton only. AI literacy at Phase 0, before going deep in Phase 3.*
 
-- ⬜ What an ML model actually is — security reframe
-- ⬜ Training vs inference attack surface
-- ⬜ LLMs from the inside
-- ⬜ RAG, agents, fine-tuning vocabulary
-- ⬜ Where the AI attack surface lives
-- ⬜ Prompt injection — the headline attack
-- ⬜ OWASP LLM Top 10 — name and one-liners
-- ⬜ Why AI Security is a new field
+- ⬜ What "AI" actually means today
+- ⬜ ML in one diagram — train, predict, evaluate
+- ⬜ Supervised vs unsupervised vs reinforcement
+- ⬜ Neural networks — the cartoon version
+- ⬜ What a transformer is, in plain English
+- ⬜ LLMs from the outside — what they're good and bad at
+- ⬜ Prompts, tokens, context windows
+- ⬜ RAG, agents, fine-tuning — the vocabulary
+- ⬜ Using AI as a coding partner (Cursor / Claude / Copilot, properly)
+- ⬜ The honest limits of LLMs
 
-📂 [[phase-0-foundation/07-ai-ml-security-intro/index|See chapter index →]]
+📂 [[phase-0-foundation/07-what-is-ai/index|See chapter index →]]
 
 ### Chapter 0.8 — Phase 0 Capstone ⬜
 
-- ⬜ Phase 0 review — six topics in one summary
+- ⬜ Phase 0 review — the bones of computing in one summary
 - ⬜ 50-term glossary self-quiz
-- 🧪 Capstone — walk through a real (small) breach report and identify which Phase 0 concepts each step involves. Becomes a public blog post in your portfolio.
+- 🧪 Capstone — build one small project end to end: a Python CLI tool, deployed on a free-tier EC2, with one feature that calls an LLM API. Becomes the first portfolio piece.
 
 ---
 
-## 🟦 Phase 1 — Security+ (planned)
+## 🟦 Phase 1 — Software Engineering Core (planned)
 
-> *Will be designed in detail after Phase 0 is complete. The same six topic areas, deeper. Capstone: pass CompTIA Security+.*
+> *The trunk of the tree. Real engineer-level chops.*
 
-Topics revisited:
-- Machine — processes, memory, registers at the level where buffer overflows make sense
-- OS — Windows + Linux internals at defender level
-- Networking — comfortable with Wireshark and packet analysis
-- Security — full Sec+ syllabus
-- Cloud — AWS hands-on basics (EC2, S3, IAM, VPC)
-- AI Security — OWASP LLM Top 10 read properly
-
----
-
-## 🟦 Phase 2 — AWS Security Specialty (planned)
-
-> *The Cloud Security niche. The cert that gets you hired in Sydney.*
-
-Topics revisited:
-- Machine — virtualization, hypervisors, containers
-- OS — production Linux, container internals (namespaces, cgroups)
-- Networking — VPC peering, transit gateway, private endpoints
-- Security — SIEM / EDR / IR practitioner
-- Cloud — IAM deep dive, KMS, GuardDuty, Security Hub, CloudTrail, network security, secrets, container & K8s security, Essential Eight
-- AI Security — hands-on prompt injection lab, adversarial ML reading
+Likely topic threads:
+- **Languages** — Python deep, then a second language with serious depth (TypeScript or Go)
+- **Data structures + algorithms** — the engineer's version, not the LeetCode-grind version
+- **System design** — fundamentals; the YouTube-tier system design questions, then the real-world ones
+- **Git + collaboration** — branching strategies, code review, conflict resolution
+- **Testing + debugging** — unit, integration, end-to-end, observability mindset
+- **Web fundamentals** — HTTP deep, REST, GraphQL, browsers, frontend basics
+- **Databases** — SQL deep, NoSQL intro, when to pick which
+- **AI as a coding partner** — using LLMs like a senior engineer does
 
 ---
 
-## 🟦 Phase 3 — GIAC GAIA (planned)
+## 🟦 Phase 2 — Cloud · Distributed · Production (planned)
 
-> *The endgame. AI/ML Security expertise.*
+> *Where modern software actually lives. Cert target: AWS Solutions Architect Associate.*
 
-Topics revisited:
-- Machine — GPU architecture for ML
-- OS — ML runtimes, model-serving stacks
-- Networking — model APIs and inference traffic
-- Security — AI red teaming, threat modelling
-- Cloud — securing AI workloads (Bedrock, SageMaker, Azure OpenAI)
-- AI Security — full OWASP LLM Top 10 with labs, NIST AI RMF, MITRE ATLAS, hands-on red teaming, adversarial ML, supply chain attacks
-
----
-
-## 🟦 Phase 4 — Practitioner / Portfolio (ongoing, no cert)
-
-> *No more cert pressure. Real-world projects, blog posts, OSS contributions, conference talks.*
+Likely topic threads:
+- **Cloud (AWS heavy)** — EC2, S3, IAM, VPC, Lambda, RDS, the core forty services
+- **Containers** — Docker thoroughly, Kubernetes practically
+- **CI/CD + DevOps** — GitHub Actions, Terraform / IaC, deploy pipelines
+- **Distributed systems** — consistency, availability, partitions; queues, pub/sub, caches
+- **Microservices vs monoliths** — when each makes sense
+- **Performance + scalability** — load testing, profiling, capacity planning
+- **Observability** — logs, metrics, traces, the three pillars
+- **Cloud-native AI infra** — SageMaker, Bedrock, vector DBs, model-serving infra
 
 ---
 
-*Last updated: 2026-04-30. This map regenerates as each chapter completes.*
+## 🟦 Phase 3 — AI / ML Engineering (planned)
+
+> *Where data science compounds. The real AI engineering layer.*
+
+Likely topic threads:
+- **ML fundamentals (engineer's view)** — the math you actually need, the math you don't
+- **Deep learning practical** — CNNs, RNNs, transformers from inside
+- **LLMs from the inside** — tokenization, attention, training, inference
+- **Building AI products** — RAG, agents, fine-tuning, evals, guardrails
+- **MLOps** — model versioning, serving, monitoring, drift detection
+- **Data engineering for ML** — pipelines, feature stores, training data quality
+- **GPU compute** — what actually happens on the silicon, why it matters for cost
+- **Research literacy** — reading papers, reproducing results, contributing
+
+---
+
+## 🟦 Phase 4 — Practitioner / Research (ongoing, no cert)
+
+> *No more cert pressure. Real-world projects, blog posts, OSS contributions, research papers, conference talks. The on-ramp for senior/staff engineering and the AI PhD path.*
+
+---
+
+*Last updated: 2026-05-10. This map regenerates as each chapter completes.*

@@ -1,5 +1,5 @@
 ---
-title: "0.1.3 Hexadecimal and why hackers love it"
+title: "0.1.3 Hexadecimal and why engineers love it"
 phase: 0
 chapter: "0.1 Physical Machine"
 lesson: "0.1.3"
@@ -7,7 +7,7 @@ status: seedling
 tags: [phase-0, physical-machine, fundamentals]
 ---
 
-# 0.1.3 Hexadecimal and why hackers love it
+# 0.1.3 Hexadecimal and why engineers love it
 
 > **In one line:** hex is a way of writing binary that's *just barely* readable by humans, which is why every memory address, hash, MAC address, and crash dump on the planet is in hex.
 
@@ -42,17 +42,17 @@ Hex uses sixteen digits. The first ten are 0–9. Then we run out of single digi
 
 When you see `0x` at the start of a number, it means "this is hex" — `0xFF` = 255. The web colour `#FF0000` is hex for "255 red, 0 green, 0 blue."
 
-## Why a hacker cares
+## Why an engineer cares
 
 You will see hex *constantly*:
 
-- **Memory addresses** — `0x7ffd2a1c0010` says "this thing lives at this byte in RAM." Crash dumps, debuggers, and exploits speak in hex addresses all day.
-- **Hashes** — an MD5 is 32 hex chars, a SHA-256 is 64. `5d41402abc4b2a76b9719d911017c592` is a hash, not a wifi password.
-- **MAC addresses** — `00:1A:2B:3C:4D:5E` is six bytes in hex, identifying a network card.
-- **Malware signatures** — antivirus rules often match on hex byte patterns inside files (`4D 5A` at offset 0 = a Windows executable).
-- **Packet captures** — Wireshark shows raw bytes in hex columns next to their text interpretation.
+- **Memory addresses** — `0x7ffd2a1c0010` in a debugger, a stack trace, or a core dump.
+- **Hashes** — git commit IDs (`5d41402a...`), file checksums, content-addressable storage.
+- **Colour codes** — `#FF6B6B` on every web page you'll ever style.
+- **MAC addresses, IPv6 addresses, UUIDs** — all hex.
+- **Reading binary file formats** — magic numbers (`50 4B 03 04` = ZIP, `89 50 4E 47` = PNG).
 
-When a memory-corruption exploit works, the attacker is overwriting data at hex address X with hex bytes Y to make the CPU jump to hex address Z. Reading hex fluently isn't optional — it's the language the low layers speak.
+Hex is the engineer's universal way of looking at raw bytes without going cross-eyed in binary.
 
 ## In one sketch
 
@@ -73,4 +73,4 @@ When a memory-corruption exploit works, the attacker is overwriting data at hex 
 
 ## Memory peg
 
-Hex is just binary in shorter clothes. Two hex digits = one byte. Read enough crash dumps and you'll start *thinking* in it.
+Hex is just binary in shorter clothes. Two hex digits = one byte. Read enough crash dumps and you'll start *thinking* in 

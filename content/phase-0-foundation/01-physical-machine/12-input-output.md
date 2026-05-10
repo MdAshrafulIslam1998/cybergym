@@ -44,19 +44,17 @@ Outputs:
 
 Most modern peripherals speak **USB**, the universal hardware/software protocol. USB lets the host PC enumerate devices, install drivers automatically, and share power. USB-C added the ability to do display output, charging, and Thunderbolt-grade data over the same connector.
 
-## Why a hacker cares
+## Why an engineer cares
 
-I/O is **the fattest attack surface on the box**:
+I/O is the surface where humans, sensors, and the wider world meet your code:
 
-- **BadUSB / RubberDucky** — a USB stick that pretends to be a *keyboard*. When plugged in, it instantly types out hundreds of commands ("open PowerShell, download payload, run, hide"). Your antivirus doesn't see it because it's just keyboard input. Defence: don't plug in random USB sticks. (Yes, people still do.)
-- **Malicious cables** — USB cables with hidden chips inside that exfiltrate data, or do BadUSB. The "OMG Cable" looks identical to a normal Lightning cable.
-- **Juice jacking** — public USB charging ports that try to pair as a host and steal data from your phone.
-- **Keyboards / keystroke logging** — wireless keyboard signals can be sniffed (older Logitech receivers were notorious). Hardware keyloggers plug between keyboard and PC.
-- **Display side channels** — TEMPEST attacks read screen content from the electromagnetic emanations of a monitor across a room.
-- **DMA attacks via Thunderbolt / FireWire** — see lesson 0.1.10. A "charger" plugged into a Thunderbolt port can read RAM directly.
-- **Camera / mic hijacking** — RATs that quietly enable webcam without the indicator LED. Tape over the camera; physical mic switches on privacy-focused laptops.
+- **Input latency budgets** — for interactive software, end-to-end input → screen latency under ~100 ms feels instant. Anything more feels laggy. Game engines, IDEs, and high-end UIs are obsessive about this.
+- **USB protocol literacy** — USB 2 (480 Mbps), USB 3 (5–20 Gbps), USB-C / Thunderbolt (40 Gbps). Knowing which port on the laptop runs at what speed saves hours of "why is my external drive slow."
+- **Display protocols** — HDMI, DisplayPort, USB-C alt-mode. Refresh rates, colour depth, HDR all live here. For multi-monitor engineering setups (most senior devs run 2–3 screens), the protocol matters.
+- **Peripheral standards** — keyboards, mice, controllers all use HID (Human Interface Device) over USB. The OS sees them as a generic protocol, which is why most peripherals "just work."
+- **Sensor I/O** — for IoT, robotics, and embedded ML, GPIO pins, I2C, SPI, and UART are how the chip talks to the world.
 
-For defenders, **endpoint USB control** (block all USB except specific allow-listed device IDs) is a common enterprise control. Air-gapped systems often have USB ports physically epoxy-filled.
+I/O is where the program stops being theoretical and meets reality.
 
 ## In one sketch
 

@@ -95,17 +95,11 @@ Copy this template into a new note in `content/phase-0-foundation/01-physical-ma
 - **One thing that surprised you:**
 - **One thing you'd want to look at deeper:**
 
-## Why this matters for security
+## Why this matters for engineering
 
-Physical access defeats most software defences. An attacker who can open your case can:
+Reading about hardware is one thing. Holding a CPU in your hand and feeling how absurdly small it is — and how much heatsink it needs — is another. The intuition you build from physically seeing the box stays with you for every performance discussion, every cloud-instance choice, every GPU-rental decision.
 
-- **Reset the BIOS** by removing the CMOS battery for 30 seconds — wipes BIOS passwords.
-- **Boot from a USB stick** to a live Linux that reads your disk (defeated by full-disk encryption).
-- **Pull the SSD** and read it offline (defeated by full-disk encryption).
-- **Plant a hardware keylogger** between keyboard and motherboard.
-- **Reflash the firmware chip** with a malicious BIOS (LoJax-style implant).
-
-Knowing the inside of a PC is the first step to thinking about physical-access threat models — which matter for laptops in cafes, BYOD policies, server-room security, and the "evil maid" scenario.
+Engineers who have built or repaired their own machines have an instinctive sense of where bottlenecks live. That sense is hard to teach in a textbook.
 
 ## Reference and image credit
 

@@ -50,15 +50,17 @@ This is exactly the modern memory hierarchy. The CPU operates on numbers measure
 
 Each level up is roughly **10× slower and 10–100× bigger**. Programmers don't usually manage this manually — the CPU does it automatically, copying data from RAM into cache, from cache into registers, as needed. But cache-aware code can run **10× faster** than cache-oblivious code doing the same thing.
 
-## Why a hacker cares
+## Why an engineer cares
 
-Cache is *itself* an attack surface — and a magnificent one:
+Cache hierarchy is the difference between fast code and slow code that *looks* the same:
 
-- **Spectre / Meltdown (2018)** worked because the CPU left **traces in the cache** even when it threw away the results of speculative execution. By measuring how fast certain memory addresses loaded (cached = fast, uncached = slow), an attacker could *infer* secret values the CPU had peeked at.
-- **Cache timing attacks** on cryptography — by measuring how long an AES round takes (and which cache lines were hit), researchers can recover the encryption key. Modern crypto libraries (`OpenSSL`, etc.) write their critical loops in *constant time* specifically to defeat this.
-- **Rowhammer (2014)** — physically *flipping bits* in RAM by repeatedly hammering nearby rows. Used to escalate from userland to kernel. Doesn't touch cache, but lives in the same neighbourhood.
+- **Cache locality** — accessing memory in order (sequential) is much faster than jumping around (random). This is why arrays beat linked lists in most real workloads.
+- **L1 / L2 / L3 latency** — roughly 1, 4, 12, and 200 cycles respectively (L1 → main RAM). Knowing where your hot data lives changes everything.
+- **Cache line size (64 bytes)** — when you read one byte, the CPU pulls in 64. Designing structs to pack hot fields together is a real performance win.
+- **False sharing** — two threads writing to nearby variables on the same cache line ping-pong the line between cores and tank performance. Real bug, real fix.
+- **ML implication** — keeping a model's working set in fast memory (cache, VRAM) is the entire game in inference performance.
 
-If you ever wondered why CPU vendors release patches that say "performance regression of 5–30% in some workloads" — those are usually mitigations for cache-side-channel attacks.
+When code is mysteriously 10x slower than the napkin math says it should be, the answer is usually cache.
 
 ## In one sketch
 

@@ -46,15 +46,16 @@ Heat flows from CPU → thermal paste → heatsink baseplate → fins → air. I
 
 The metal box has three jobs: hold everything in place, channel airflow front-to-back, and keep electromagnetic interference contained. Good airflow goes intake (front, bottom) → over hot components → exhaust (rear, top).
 
-## Why a hacker cares
+## Why an engineer cares
 
-- **Power-line attacks** — a motivated attacker with access to power infrastructure can extract data via *power consumption patterns* of a CPU performing crypto. Air-gapped systems aren't fully air-gapped if they're plugged in.
-- **Fan-noise side channels** — researchers have demonstrated extracting CPU activity by recording fan noise (fans speed up under load).
-- **Cold-boot attacks** rely on the physical property that RAM cells lose charge slowly when chilled. Spray a cold-air can on the RAM, pull the power, dump the bits in another machine before they fade.
-- **Thermal attacks** — overheating a chip on purpose can cause **bit flips** that can be exploited. Some AI accelerators have been shown to misclassify under thermal stress — a concern for safety-critical systems.
-- **Physical destruction** — the most reliable way to ensure data is gone is to physically destroy the storage. Drilling through the platters of a HDD, shredding an SSD's NAND chips. Major institutions have on-site shredders.
+Power and cooling become the *primary* engineering constraints at scale:
 
-For *defenders*, the lesson is simpler: monitor temperature and power. Anomalies often signal compromise (cryptojacking spikes CPU and fan; a covert RAT may show unusual idle-time CPU usage).
+- **Datacenter economics** — the cost of running a server is mostly the power bill, not the hardware. AWS's pricing reflects power and cooling budgets directly.
+- **Thermal throttling** — when a chip gets too hot, it slows itself down to avoid melting. "Why is the box slower today?" is sometimes a clogged fan.
+- **GPU clusters and cooling** — high-end ML training racks draw 30+ kW per rack. Some datacenters now use liquid cooling because air can't keep up. This is why "ML at scale" is a different engineering problem than "ML on my laptop."
+- **PSU sizing** — undersized power supplies cause crashes that *look* like software bugs. Multi-GPU rigs need 1500W+ PSUs.
+- **Geographic placement** — AWS regions are sited near cheap power (hydro in Oregon, wind in Sweden). Latency, cost, and carbon footprint all live here.
+- **Edge devices** — phones, IoT, embedded boards have *thermal* and *battery* budgets that shape what models can run. On-device AI is constrained here.
 
 ## In one sketch
 

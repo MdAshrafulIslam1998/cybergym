@@ -9,7 +9,7 @@ tags: [phase-0, physical-machine, boot]
 
 # 0.1.15 The full boot sequence
 
-> **In one line:** between you pressing the power button and seeing the login screen, *seven* distinct programs run in a chain — and a foothold at any one of them owns the rest.
+> **In one line:** between you pressing the power button and seeing the login screen, *seven* distinct programs run in a chain — and understanding all seven is what separates the engineers who can debug a stuck server from the ones who reach for the help desk.
 
 <figure>
   <img src="https://commons.wikimedia.org/wiki/Special:FilePath/UEFI_boot_process.png?width=1200" alt="UEFI boot process block diagram." />
@@ -18,13 +18,17 @@ tags: [phase-0, physical-machine, boot]
 
 ---
 
-## A story — Stuxnet, the worm that walked the chain
+## A story — the server that wouldn't come up
 
-In 2010, security researchers found something extraordinary on a USB stick from an Iranian nuclear facility. The malware — **Stuxnet** — had been written by a national security agency (later confirmed: a joint US/Israeli operation called Olympic Games). Its target was specific: industrial PLCs controlling uranium-enrichment centrifuges at Natanz.
+3 a.m. A datacenter rack of production web servers reboots after a power blip. Six come back fine. One sits there with a black screen and a blinking cursor.
 
-But the part that stunned researchers was the *boot chain* attack. Stuxnet exploited **four zero-day Windows vulnerabilities at once** — unprecedented for in-the-wild malware — and used **two stolen code-signing certificates** from Realtek and JMicron so its drivers loaded as trusted, in the early Windows boot phase. It hooked into the OS so deep that it could spoof the centrifuge sensor readings to operators while quietly destroying the centrifuges.
+The on-call engineer SSHs in remotely — nothing, the box is offline. They open IPMI (the out-of-band management console) and see something almost no app developer ever sees: the actual *boot* output. The server is stuck on a single line — `error: file '/boot/grub/i386-pc/normal.mod' not found`.
 
-The lesson: each step in the boot sequence trusts the step before it. Compromise step 2 and steps 3, 4, 5, 6, 7 all blindly trust your malicious payload. Stuxnet showed nation-states had figured this out a decade ago.
+It's not the kernel. It's not the OS. It's not the app. It's *the bootloader* — GRUB couldn't find one of its own modules, because a recent update wrote files to a partition that was almost full and one ended up corrupted on disk.
+
+The fix wasn't software-level. The engineer had to boot from a recovery image, mount the broken disk, and reinstall GRUB by hand.
+
+The lesson: when production breaks, the bug isn't always in the code. Sometimes it's in step 4 of a chain that has seven steps, and you can't debug what you don't know exists.
 
 ## What's actually going on
 
@@ -44,21 +48,19 @@ On a fast NVMe machine this entire chain runs in under 10 seconds. On a slow HDD
 
 Each step **measures and trusts the next**. Modern systems use the **TPM** (Trusted Platform Module — a tiny crypto chip on the motherboard) to record the cryptographic hash of each step into special registers (PCRs). Later, an OS or remote server can ask the TPM "are these PCR values what we expect?" — and detect tampering.
 
-## Why a hacker cares
+## Why an engineer cares
 
-Each stage is a different attack surface:
+The boot sequence is what production failures dance through. Each stage is a place where things can go wrong, and engineers debug all of them:
 
-| Stage | Famous attack | Defence |
+| Stage | What can break | Debug move |
 |---|---|---|
-| Firmware | LoJax, BlackLotus, MoonBounce | Secure Boot, TPM measured boot, vendor firmware updates |
-| Bootloader | Bootkits before Secure Boot | Secure Boot, signed bootloaders |
-| Kernel | Stuxnet's stolen-cert drivers | Driver signing enforcement, HVCI |
-| Init / services | Persistence via scheduled tasks, services | EDR, Sysmon, audit policies |
-| Login | Keystroke loggers, fake login screens | Kerberos, PAM hardening, MFA |
+| Firmware (UEFI/BIOS) | Boot order wrong, firmware out of date | UEFI settings, IPMI / iDRAC console |
+| Bootloader (GRUB / Windows Boot Manager) | Corrupted, wrong partition selected | Recovery boot, reinstall bootloader |
+| Kernel | Wrong kernel for hardware, missing drivers | Try previous kernel, single-user mode |
+| Init / systemd | Service hangs at boot | `systemd-analyze`, look at journal logs |
+| User services | App fails to start | Logs, dependency check, port conflicts |
 
-The earlier in the chain you compromise, the harder it is for downstream defences to detect you. Bootkits are gold standard. That's why mature defences (BitLocker + TPM + Secure Boot + HVCI + Defender) try to enforce trust *all the way down*.
-
-For a defender investigating a compromised machine, the boot chain is your forensic timeline: anything that runs at stage 5 or 6 leaves logs in the kernel's event tracing, scheduled tasks, services, registry run keys. Anything at stage 2-4 is much harder to see — you may need to dump and analyse the firmware itself.
+The same idea applies to **container images** — a container's "boot" is the same chain in miniature: image layers → entrypoint → init → app. When a container won't start in production, you're debugging this same sequence at a different layer.
 
 ## In one sketch
 
@@ -81,9 +83,9 @@ For a defender investigating a compromised machine, the boot chain is your foren
    7. Login / display manager   ─── you see the screen
           │
           ▼
-   [ Welcome, Trupples ]
+   [ Welcome screen ]
 
-   ↑ each step trusts the previous. Compromise step N → own steps N+1 to 7.
+   ↑ each step loads the next. Break step N → steps N+1 to 7 never run.
 ```
 
 ## Reference and image credit
@@ -92,4 +94,4 @@ For a defender investigating a compromised machine, the boot chain is your foren
 
 ## Memory peg
 
-Power → firmware → bootloader → kernel → init → login. Seven hops. Each one trusts the previous. Earliest foothold wins.
+Power → firmware → bootloader → kernel → init → login. Seven hops. Each one loads th

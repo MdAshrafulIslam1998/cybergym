@@ -43,17 +43,18 @@ If you unscrew the side panel of a desktop PC, here's what you're looking at:
 
 The motherboard is the centrepiece. Everything physically plugs into it: the CPU socket, the RAM slots (usually 2 or 4), the M.2/SATA storage connectors, the PCIe slots (where the GPU lives), and the front-panel headers where the case's power button and USB ports connect.
 
-## Why a hacker cares
+## Why an engineer cares
 
-Each of these parts has its own attack surface and its own forensic value:
+Each part has performance and engineering implications:
 
-- **Motherboard / chipset** runs **firmware** that even the OS can't see. Compromise this and you have rootkit-level persistence (look up "Equation Group" implants).
-- **CPU** has microcode that can be updated — Intel and AMD push patches for vulnerabilities like Spectre via microcode.
-- **RAM** holds *everything* in plaintext while running — passwords, keys, decrypted documents. **Cold boot attacks** chill the RAM with cooling spray and dump it before it forgets.
-- **Storage** retains data even after deletion — data-recovery is a forensic specialty. Encrypted drives need the OS to decrypt them; pull the drive and you mostly just get ciphertext.
-- **GPU** has its own memory and can do general computation — modern crypto-mining malware and some recent exploits use GPUs to hide from CPU-based detection.
-- **PSU** can be backdoored to leak data via power-line patterns (academic work, but real).
-- **USB ports** are an entire attack vector — BadUSB, RubberDucky, malicious "phone chargers."
+- **CPU** — core count and clock speed shape what kind of workloads the box can run. Compile time, web request handling, scientific computing all depend here.
+- **RAM** — your memory budget for everything from running a Postgres replica to loading a 70B-parameter LLM. Run out of RAM and you swap to disk and everything slows by 1000x.
+- **GPU** — the whole modern AI stack runs on GPUs. Model size is bound by VRAM. Training is bound by compute. Buying or renting GPUs is one of the most consequential decisions in ML engineering.
+- **Storage** — NVMe vs SATA SSD vs HDD changes throughput by 10x to 100x. Database performance, container cold-start time, log ingestion all live here.
+- **Motherboard / chipset** — PCIe lanes determine how many GPUs and NVMe drives can run at full speed. This matters for ML rigs.
+- **Power supply** — modern GPUs draw 300–700W each. Underspecced PSUs cause silent crashes that look like software bugs.
+
+Knowing the box keeps you from blaming code when the bottleneck is silicon.
 
 ## In one sketch
 

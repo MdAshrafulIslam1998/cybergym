@@ -37,15 +37,16 @@ Inside the CPU there's a special register called the **program counter** (PC) �
 
 Then back to step 1. Modern CPUs do this **billions of times per second** per core, and they cheat: they **pipeline** (start fetching the next instruction before the current one finishes), **predict branches** (guess which way an `if` will go and start running ahead), and **execute out of order** (do later instructions first if they don't depend on earlier ones).
 
-## Why a hacker cares
+## Why an engineer cares
 
-This loop is the playground for the deepest exploits in security:
+This loop is where the gap between "looks fast" and "is fast" lives:
 
-- **Spectre (2018)** abused **branch prediction**. The CPU was speculatively executing instructions down the wrong path of an `if` — and even though it threw the results away, the *cache state* leaked information about secrets. Attackers learned to read kernel memory from a JavaScript ad.
-- **Return-oriented programming (ROP)** doesn't inject new code at all — it strings together tiny fragments of *existing* trusted code by overwriting return addresses on the stack. The CPU happily executes them because, to the CPU, they're just instructions at the address the PC points to.
-- **Shellcode injection** is the old-school version: convince the CPU to set its program counter to data the attacker controls (your input buffer), and the CPU will execute that data as instructions.
+- **Pipelining** — modern CPUs are fetching the next instruction while decoding the current one and executing the previous one. Branchy, hard-to-predict code wastes the pipeline; straight-line predictable code flies.
+- **Branch prediction** — the CPU guesses which way an `if` will go. Bad guesses (mispredictions) cost ~20 cycles each. Sorting your data first sometimes makes a loop *faster* because the branches become predictable.
+- **Out-of-order execution** — CPUs reorder instructions to keep the pipeline full. That's why the order in your source code isn't always the order things actually run in.
+- **SIMD / vector instructions** — modern CPUs can do the same operation on 4, 8, or 16 numbers in parallel. NumPy, PyTorch, image processing all rely on this.
 
-Everything the CPU does, it does because the program counter pointed there. **Whoever controls the PC, controls the machine.**
+The fetch-decode-execute loop is why two equivalent algorithms can have wildly different real-world performance.
 
 ## In one sketch
 

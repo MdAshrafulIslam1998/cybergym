@@ -43,13 +43,16 @@ Modern GPUs sit in a PCIe slot with their own fans. They have their own VRAM (Vi
 
 If you're not doing graphics, scientific simulation, crypto mining, or AI — your GPU is mostly idle. But for those workloads it's 10-100× faster than a CPU.
 
-## Why a hacker cares
+## Why an engineer cares
 
-- **GPU password cracking** — a tool called **Hashcat** uses GPUs to try billions of password guesses per second. An 8-character password? Cracked in hours, not years. This is why everything modern uses **slow** key-derivation functions (bcrypt, scrypt, Argon2) — to make GPU brute-force impractical.
-- **Crypto-mining malware** — quietly hijack the GPU for currency mining. Slow GPU, hot card, big power bill.
-- **AI/ML attack surface** — the entire AI security niche (which we're aiming for) is built on GPU-trained models. Attacks on ML models include adversarial examples, model extraction, training data poisoning, prompt injection — all happen at the GPU/model layer.
-- **Side channels** — power and timing side-channels on GPUs are a research area. GPU-resident malware that hides from CPU-based detection has been demonstrated in academic papers.
-- **VRAM forensics** — GPU memory often holds decrypted keys, frame buffers, and model weights long after the user thinks they're gone.
+The GPU is the most important piece of silicon for AI engineers:
+
+- **The entire AI/ML stack lives on GPU.** Training, inference, fine-tuning — if it touches a transformer, it's on a GPU. CPUs are too slow for serious matmul.
+- **VRAM determines model size.** A 24 GB GPU (RTX 4090) holds different models than an 80 GB GPU (H100). Quantisation (fp16, int8, int4) is how engineers fit big models on small GPUs.
+- **CUDA vs ROCm vs Metal** — NVIDIA dominates ML because of CUDA's maturity. AMD (ROCm) and Apple (Metal) are catching up. Engineering choices follow.
+- **Cloud GPU economics** — an H100 on AWS is ~$2–4/hour. A multi-GPU training run is real money. Knowing how to maximise GPU utilisation (mixed precision, gradient checkpointing, batching) is an engineering skill that saves serious cost.
+- **Inference vs training** — training needs raw FLOPs and big VRAM. Inference often cares more about latency, throughput, and cost-per-token. Different hardware optimises for each.
+- **Beyond ML** — GPUs are also the workhorse of graphics, video encoding, scientific computing, and crypto mining (in less salubrious times).
 
 ## In one sketch
 

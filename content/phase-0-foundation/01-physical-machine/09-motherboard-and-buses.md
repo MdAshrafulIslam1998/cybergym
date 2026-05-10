@@ -46,15 +46,17 @@ Key parts of a modern motherboard:
 
 A **bus** is just a set of wires that multiple components share. The CPU has a high-speed bus to the chipset. The chipset has slower buses to USB, SATA, audio. PCIe is a packet-switched bus — more like a network than a wire.
 
-## Why a hacker cares
+## Why an engineer cares
 
-The motherboard is the city — and there are corners attackers love:
+The motherboard is the city, and bus capacity dictates how much can move at once:
 
-- **Firmware / BIOS / UEFI chip** runs **before the OS does**, so malware that lives there ("bootkits" like LoJax, BlackLotus) survives a full Windows reinstall and is invisible to OS-level antivirus.
-- **Chipset firmware** has its own attack surface. Intel's Management Engine (ME) and AMD's PSP are tiny computers inside the chipset that run independent of the main CPU and can do scary things (out-of-band access). Researchers have found vulnerabilities in both.
-- **DMA attacks** — devices on PCIe / Thunderbolt / FireWire can read main memory directly without asking the CPU. A malicious Thunderbolt dock can dump RAM. (Modern protections: IOMMU, kernel DMA protection.)
-- **Evil maid attacks** — an attacker with brief physical access plugs a malicious USB or PCIe device and reflashes the BIOS. Now the laptop is theirs forever.
-- **Supply chain** — backdoored motherboards out of factory. The Bloomberg "Big Hack" story (2018) claimed Chinese spies had planted rice-grain-sized chips on Supermicro server boards. Disputed, but the *threat model* is taken seriously.
+- **PCIe lanes** — modern CPUs have 16–28 PCIe lanes. Each NVMe drive eats 4. Each high-end GPU eats 16. Multi-GPU ML rigs need motherboards with enough lanes (or PCIe switches), or they bottleneck.
+- **NVMe is just PCIe** — that's why NVMe is so much faster than SATA. SATA tops out at ~600 MB/s; NVMe (Gen 4) hits 7,000 MB/s.
+- **Memory channels** — dual-channel vs quad-channel changes RAM bandwidth by 2x. Workstations and servers often have more channels.
+- **Bus saturation as bottleneck** — sometimes "the disk is fast but the system is slow" comes down to a saturated PCIe bus or a chipset limit nobody documented.
+- **Chipset features** — features like ECC RAM, PCIe Resizable BAR, and TPM live in the chipset. Server boards have features desktop boards don't.
+
+Buses are the highways of the box. When traffic jams up, code waits.
 
 ## In one sketch
 

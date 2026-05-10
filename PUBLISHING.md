@@ -1,12 +1,14 @@
-# Publishing — Obsidian → GitHub → Quartz → Trupples VPS
+# Publishing — Obsidian → GitHub → Quartz → GitHub Pages
 
-This guide turns the vault into a public website on the trupples VPS. End state:
+This guide describes the publish flow for `_thewozniakfile`. End state (current):
 
 - I edit notes in Obsidian on my laptop.
-- I `git push` to GitHub.
-- A GitHub Action (or a webhook on the VPS) builds the Quartz static site and deploys it to the VPS.
-- The site is reachable at `https://notes.trupples.<tld>` (or whatever subdomain I pick) with full-text search built in.
-- The repo is the source of truth; the VPS is just a publish target.
+- I `git push` to GitHub (branch `v4`).
+- A GitHub Action builds the Quartz static site and deploys it to GitHub Pages.
+- The site is reachable at `https://mdashrafulislam1998.github.io/_thewozniakfile/` with full-text search built in.
+- The repo is the source of truth; GitHub Pages is the publish target.
+
+> Older VPS-based notes follow below for reference — the live setup is GitHub Pages.
 
 > Confirm exact commands against the [Quartz docs](https://quartz.jzhao.xyz) when you set this up — the project moves fast.
 
